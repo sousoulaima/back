@@ -20,7 +20,7 @@ class UserController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:8',
-            'role' => 'required|in:Administrateur,Gestionnaire,Reception,Formateur',
+            'role' => 'required|in:Administrateur,Adhérent,Agent d\'accueil,Formateur',
             'status' => 'required|in:Actif,Inactif',
         ]);
 
@@ -49,7 +49,7 @@ class UserController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users,email,' . $user->id,
-            'role' => 'required|in:Administrateur,Gestionnaire,Reception,Formateur',
+            'role' => 'required|in:Administrateur,Adhérent,Agent d\'accueil,Formateur',
             'status' => 'required|in:Actif,Inactif',
         ]);
 
